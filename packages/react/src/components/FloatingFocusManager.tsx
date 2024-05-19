@@ -300,7 +300,7 @@ export function FloatingFocusManager(
     return () => {
       floating.removeEventListener('focusin', handleFocusIn);
     };
-  }, [disabled, floating]);
+  }, [disabled, floating, getTabbableContent]);
 
   React.useEffect(() => {
     if (disabled) return;
@@ -398,6 +398,7 @@ export function FloatingFocusManager(
     onOpenChange,
     closeOnFocusOut,
     restoreFocus,
+    getTabbableContent,
   ]);
 
   React.useEffect(() => {
